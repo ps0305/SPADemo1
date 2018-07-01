@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { ChildoneComponent } from './components/childone/childone.component';
 import { ChildtwoComponent } from './components/childtwo/childtwo.component';
 import { ChildthreeComponent } from './components/childthree/childthree.component';
+import { AuthService } from './guards/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ChildthreeComponent } from './components/childthree/childthree.componen
     ChildthreeComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [IndexComponent]
 })
 export class AppModule {}
