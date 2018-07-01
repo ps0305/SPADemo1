@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pagethree',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagethreeComponent implements OnInit {
   private var_three: any;
-  constructor() {
-    this.var_three = "I'm from page three component !!";
+  constructor(private _route: ActivatedRoute) {
+    this.var_three =
+      this._route.snapshot.params['e_id'] +
+      '....' +
+      this._route.snapshot.params['e_name'] +
+      '....' +
+      this._route.snapshot.params['e_sal'];
   }
 
   ngOnInit() {}

@@ -7,13 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  constructor(private _router: Router) {}
 
-  constructor(private _router:Router) { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  public clickMe(): any {
+    this._router.navigate(['/page_three', 333, 'e_three', 30000]);
   }
-  public clickMe():any{
-    this._router.navigate(['/page_three']);
-  }
-
 }
